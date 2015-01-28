@@ -138,11 +138,23 @@ bigint operator- (const bigint& left, const bigint& right) {
 		if(left.big_value.size()==right.big_value.size()){
 			// lengths are equal
 			// start subtracting from left?	
+			while()//has next digit
+				if(left.big_value < right.big_value){
+				//borrow
+				}
+			//subtract
+			
+		}else if(left.big_value.size() < right.big_value.size)()){
+			//top number is smaller	
+			if(left.big_value < right.big_value){
+				//borrow
+			}
+		}else(left.big_value.size() > right.big_value.size()){
+			//bottom number is smaller
 			if(left.big_value < right.big_value){
 				//borrow
 			}
 		}
-		
 			
 	}
 	
