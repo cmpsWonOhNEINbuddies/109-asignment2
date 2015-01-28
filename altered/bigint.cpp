@@ -126,6 +126,26 @@ bigint operator+ (const bigint& left, const bigint& right) {
 
 
 bigint operator- (const bigint& left, const bigint& right) {
+	int diff:
+	int borrow = 0;
+	
+	if(left.positive && right.negative){
+		//left-(-right) then actually add
+	}
+	
+	if(!(left.negative || right.negative)){
+		//left - right
+		if(left.big_value.size()==right.big_value.size()){
+			// lengths are equal
+			// start subtracting from left?	
+			if(left.big_value < right.big_value){
+				//borrow
+			}
+		}
+		
+			
+	}
+	
    return left;
 }
 
