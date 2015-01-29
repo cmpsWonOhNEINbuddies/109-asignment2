@@ -126,14 +126,12 @@ bigint operator+ (const bigint& left, const bigint& right) {
 
 
 bigint operator- (const bigint& left, const bigint& right) {
-	int diff:
+	int diff;
 	int borrow = 0;
+	int lbegin = 1;
+        int rbegin = 1;
+        bigint DyrMyer(0);
 	
-	if(!left.negative && right.negative){
-		//left-(-right) then actually add
-		
-		
-	}
 	
 	if(!(left.negative || right.negative)){
 		//left - right
@@ -149,18 +147,35 @@ bigint operator- (const bigint& left, const bigint& right) {
         		if(rbegin >=  right.big_value.size()){
             			r = '0';
          		}
-		}
 		
-		if(left.big_value.size()==right.big_value.size()){
-			// lengths are equal
-			// start subtracting from left?	
-			while()//has next digit
-				if(left.big_value < right.big_value){
-				//borrow
-				}
-			//subtract
-			
-		}else if(left.big_value.size() < right.big_value.size)()){
+		
+		int el = (int)l - 48;
+            	int ar = (int)r - 48;
+           	diff = el + ar  + borrow;
+            	borrow = 0;
+           	if(diff >= 10){
+              		borrow = 1;
+              	diff = diff + 10;
+           	}
+           	
+		char fin = '0' + diff;
+           	DyrMyer.big_value.push_back(fin);
+           	rbegin++;
+           	lbegin++;
+		}
+	}
+	
+	if(!left.negative && right.negative){
+		//left-(-right) then actually add
+          	if(right.negative ){
+	    	bigint copr = right;
+	     	copr.negatize();
+             	DyrMyer =  left + right;
+             	return DyrMyer;
+        	}
+		
+	}
+		if(left.big_value.size() < right.big_value.size()){
 			//top number is smaller	
 			if(left.big_value < right.big_value){
 				//borrow
