@@ -129,12 +129,28 @@ bigint operator- (const bigint& left, const bigint& right) {
 	int diff:
 	int borrow = 0;
 	
-	if(left.positive && right.negative){
+	if(!left.negative && right.negative){
 		//left-(-right) then actually add
+		
+		
 	}
 	
 	if(!(left.negative || right.negative)){
 		//left - right
+		while( lbegin < left.big_value.size() || rbegin < right.big_value.size() ){
+	   		char l = '0';
+           		char r = '0';
+             		if( lbegin >= left.big_value.size() ){
+                		l = '0';  
+             		}
+             		else{
+                  		l = left.big_value[lbegin];
+                	}
+        		if(rbegin >=  right.big_value.size()){
+            			r = '0';
+         		}
+		}
+		
 		if(left.big_value.size()==right.big_value.size()){
 			// lengths are equal
 			// start subtracting from left?	
